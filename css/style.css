@@ -1,0 +1,102 @@
+@import url(./timer.css);
+@import url(./left.css);
+@import url(./right.css);
+@import url(./center.css);
+@import url(./add-item.css);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Slackey;
+  src: url(./../assets/fonts/Slackey-Regular.ttf);
+}
+
+@keyframes pop-out {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.hover:hover {
+  transform: scale(1.05);
+  animation: 0.4s ease-out 0s 1 pop-out;
+  cursor: pointer;
+}
+
+.glow:hover {
+  filter: drop-shadow(0 0 0.2rem rgb(207, 164, 22));
+}
+
+body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#top-bar {
+  background-color: black;
+  height: 18%;
+  width: 100%;
+}
+
+#game-container {
+  display: flex;
+  background: black;
+  height: 36vw;
+  width: 100%;
+}
+
+#bottom-bar {
+  background-color: black;
+  height: 18%;
+  width: 100%;
+}
+
+#house {
+  background: url(./../assets/images/house.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 26vw;
+  top: 20vw;
+  width: 5vw;
+  height: 4vw;
+}
+
+#house:hover {
+  transform: scale(1.05);
+  animation: 0.4s ease-out 0s 1 pop-out;
+  filter: drop-shadow(0 0 0.5rem rgb(207, 164, 22));
+  cursor: pointer;
+}
+
+#house:active {
+  transform: scale(1);
+}
+
+#wine {
+  z-index: 1;
+  display: none;
+  background: url(./../assets/images/wine.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 47.5vw;
+  top: 23.5vw;
+  width: 3vw;
+  height: 4vw;
+  cursor: pointer;
+}

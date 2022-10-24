@@ -1,0 +1,50 @@
+#add-inventory {
+  z-index: 4;
+  display: none;
+  background: center url(./../assets/images/add-inventory.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 20vw;
+  top: 3vw;
+  width: 24vw;
+  height: 30vw;
+}
+
+#add-inventory:hover {
+  transform: scale(1.05);
+}
+
+#add-btn {
+  z-index: 4;
+  background: center url(./../assets/images/add.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 6.7vw;
+  top: 22.25vw;
+  width: 10vw;
+  height: 3.32vw;
+  cursor: pointer;
+}
+
+#new-item {
+  z-index: 4;
+  position: absolute;
+  left: 7.6vw;
+  top: 12vw;
+  width: 8vw;
+  height: 8vw;
+  cursor: pointer;
+  filter: drop-shadow(0 0 0.5rem rgb(207, 164, 22));
+}
+
+#item-title {
+  font-size: 2vw;
+  font-family: Slackey;
+  color: rgba(18, 3, 2, 0.613);
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 6.5vw;
+}

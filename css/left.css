@@ -1,0 +1,88 @@
+#left-panel {
+  background: center / contain no-repeat url(./../assets/images/stone-wall.jpg);
+  visibility: hidden;
+  width: 18%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#logo {
+  background: center / 65% no-repeat url(./../assets/images/logo-red.png);
+  height: 25%;
+  width: 100%;
+}
+
+#buttons {
+  height: 16.5%;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#status {
+  height: 38%;
+  width: 90%;
+  position: relative;
+}
+
+#answer {
+  background: center / 70% no-repeat url(./../assets/images/answer.png);
+  height: 15.5%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#answer span {
+  font-family: Slackey;
+  color: #ebd4b6;
+  text-align: center;
+  position: absolute;
+  font-size: 1.2vw;
+  text-shadow: 0 0 0.2vw #000;
+}
+
+#post {
+  background: center / contain no-repeat url(./../assets/images/post.png);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#output {
+  font-size: 1vw;
+  font-family: Slackey;
+  box-sizing: border-box;
+  position: absolute;
+  padding: 2vw 1vw 2vw 1.2vw;
+  line-height: 1.2vw;
+  height: 100%;
+  width: 100%;
+}
+
+#output p:first-child {
+  color: #770606;
+  line-height: 1.6vw;
+}
+
+#music-btn {
+  background: center / 80% no-repeat url(./../assets/images/no-audio.png);
+  width: 33.3%;
+  height: 100%;
+}
+
+#restart-btn {
+  background: center / 80% no-repeat url(./../assets/images/reverse.png);
+  width: 33.3%;
+  height: 100%;
+}
+
+#info-btn {
+  background: center / 80% no-repeat url(./../assets/images/info.png);
+  width: 33.3%;
+  height: 100%;
+}

@@ -1,0 +1,44 @@
+#main-panel {
+  background: center / contain no-repeat url(./../assets/images/map-empty.png);
+  aspect-ratio: 1920/1080;
+  width: 64%;
+  height: 100%;
+  position: relative;
+}
+
+#location {
+  transform: scale(1.2);
+  background: center / contain no-repeat url(./../assets/images/starter.jpg);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+#back-to-map {
+  z-index: 1;
+  position: absolute;
+  left: 56.3vw;
+  top: 30vw;
+  width: 6vw;
+  height: 4.5vw;
+  display: none;
+  cursor: pointer;
+}
+
+#back-button {
+  position: absolute;
+  background: center / contain no-repeat url(./../assets/images/goback.png);
+  bottom: 0;
+  width: 3.5vw;
+  height: 3.5vw;
+}
+
+#map-button {
+  position: absolute;
+  background: center / contain no-repeat url(./../assets/images/map.png);
+  top: 0;
+  right: 0;
+  width: 5vw;
+  height: 4.5vw;
+}

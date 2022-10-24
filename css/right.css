@@ -1,0 +1,43 @@
+#right-panel {
+  background: center / contain no-repeat url(./../assets/images/stone-wall.jpg);
+  visibility: hidden;
+
+  width: 18%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#inventory-title {
+  background: bottom / 80% no-repeat url(./../assets/images/inventory-title.png);
+  height: 13%;
+  width: 100%;
+}
+
+#inventory {
+  height: 82%;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inventory-spot {
+  background: center / 80% no-repeat url(./../assets/images/inventory-spot.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 20%;
+}
+
+.inventory-spot:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.inventory-item {
+  height: 70%;
+  width: 23%;
+}
