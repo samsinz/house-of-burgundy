@@ -32,12 +32,7 @@
   height: 20%;
 }
 
-.inventory-spot:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
 .inventory-item {
-  height: 70%;
-  width: 23%;
+  height: 60%;
+  width: 40%;
 }

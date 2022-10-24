@@ -1,0 +1,41 @@
+#wine {
+  z-index: 1;
+  display: none;
+  background: url(./../assets/images/wine.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 47.5vw;
+  top: 23.5vw;
+  width: 3vw;
+  height: 4vw;
+  cursor: pointer;
+}
+
+#core {
+  z-index: 1;
+  display: none;
+  background: url(./../assets/images/core.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 47.5vw;
+  top: 23.5vw;
+  width: 3vw;
+  height: 4vw;
+  cursor: pointer;
+}
+
+#currant {
+  z-index: 1;
+  display: none;
+  background: url(./../assets/images/currant.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 27vw;
+  top: 27vw;
+  width: 6vw;
+  height: 6vw;
+  cursor: pointer;
+}

@@ -1,0 +1,166 @@
+#castle {
+  background: url(./../assets/images/castle.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 53.6vw;
+  top: 11.3vw;
+  width: 4vw;
+  height: 3.5vw;
+}
+
+#lavoir {
+  background: url(./../assets/images/lavoir.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 45vw;
+  top: 15.5vw;
+  width: 6vw;
+  height: 3.5vw;
+}
+
+#church {
+  background: url(./../assets/images/church.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 40vw;
+  top: 8.5vw;
+  width: 6.5vw;
+  height: 5vw;
+}
+
+#well {
+  background: url(./../assets/images/well.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 40vw;
+  top: 15vw;
+  width: 4vw;
+  height: 3vw;
+}
+
+#bins {
+  background: url(./../assets/images/bins.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 40.5vw;
+  top: 19.6vw;
+  width: 6vw;
+  height: 3vw;
+}
+
+#antenna {
+  background: url(./../assets/images/antenna.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 62vw;
+  top: 31vw;
+  width: 2vw;
+  height: 4vw;
+}
+
+#bus-stop {
+  background: url(./../assets/images/bus-stop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 35.2vw;
+  top: 24.5vw;
+  width: 3.2vw;
+  height: 3.2vw;
+}
+
+#town-hall {
+  background: url(./../assets/images/town-hall.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 33.2vw;
+  top: 16.5vw;
+  width: 4.5vw;
+  height: 3.5vw;
+}
+
+#sam-house {
+  background: url(./../assets/images/sam-house.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 26vw;
+  top: 20vw;
+  width: 6vw;
+  height: 5vw;
+}
+
+#tree {
+  background: url(./../assets/images/tree.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 29.5vw;
+  top: 0.1vw;
+  width: 4vw;
+  height: 3.5vw;
+}
+
+#emily-house {
+  background: url(./../assets/images/emily-house.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 14vw;
+  top: 27.5vw;
+  width: 7.2vw;
+  height: 6vw;
+}
+
+#farm {
+  background: url(./../assets/images/town-hall.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 13.2vw;
+  top: 9.2vw;
+  width: 4.5vw;
+  height: 3.5vw;
+}
+
+#vegetable-garden {
+  background: url(./../assets/images/town-hall.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 22vw;
+  top: 9.8vw;
+  width: 4.5vw;
+  height: 3.5vw;
+}
+
+#island {
+  background: url(./../assets/images/island.png);
+  display: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 3vw;
+  top: 17vw;
+  width: 4.5vw;
+  height: 3.5vw;
+  filter: drop-shadow(0 0 0.4rem rgb(147, 8, 140));
+}
+
+#cat {
+  background: url(./../assets/images/cat.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 38.1vw;
+  top: 19.6vw;
+  width: 2vw;
+  height: 2vw;
+}
