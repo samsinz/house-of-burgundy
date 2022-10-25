@@ -6,3 +6,12 @@
   height: 5%;
   width: 100%;
 }
+
+@keyframes pulse {
+  from {
+    transform: scale(0.96);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}

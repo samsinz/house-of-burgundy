@@ -26,10 +26,10 @@
   cursor: pointer;
 }
 
-#currant {
+#redcurrants {
   z-index: 1;
   display: none;
-  background: url(./../assets/images/currant.png);
+  background: url(./../assets/images/redcurrants.png);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;

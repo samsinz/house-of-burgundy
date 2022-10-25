@@ -1,6 +1,6 @@
 export default class Timer {
   constructor() {
-    this.deadline = 5 * 60;
+    this.deadline = 10 * 60;
     this.init();
   }
 
@@ -18,6 +18,8 @@ export default class Timer {
     const timerText = document.querySelector("#timer span");
     if (this.deadline <= 60) {
       timerText.style.color = "red";
+      document.querySelector("#timer").style.animation =
+        "pulse 1s infinite ease-in-out alternate";
     }
     let minutes = Math.floor(this.deadline / 60);
     let seconds = (this.deadline % 60).toString();

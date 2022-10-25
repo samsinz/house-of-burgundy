@@ -11,6 +11,9 @@ export default class Location {
     this.outputContent = outputContent;
     this.itemName = itemName;
     this.outputTitle = outputTitle;
+    this.answerBtn = document.querySelector("#answer");
+    this.answerText = document.querySelector("#answer span");
+
     if (arguments.length >= 5) {
       this.characterName = characterName;
       this.locationCharacterUrl = `./assets/images/${this.characterName}.png`;
@@ -22,6 +25,13 @@ export default class Location {
   }
 
   goToLocation(currentInventory) {
+    this.answerBtn = document.querySelector("#answer");
+    this.answerText = document.querySelector("#answer span");
+
+    const status = document.querySelector("#status");
+    status.classList.remove("add-alert");
+    status.offsetWidth;
+    status.classList.add("add-alert");
     document.querySelector("#back-to-map").style.display = "block";
     if (this.itemName && !currentInventory.inventory[this.itemName]) {
       document.querySelector(`#${this.itemName}`).style.display = "block";
@@ -54,23 +64,22 @@ export default class Location {
       this.conversation == true &&
       this.speechIndex !== this.outputContent.length - 1
     ) {
-      const answerBtn = document.querySelector("#answer");
-      const answerText = document.querySelector("#answer span");
-      answerText.innerHTML = "Of course";
-      answerBtn.style.display = "flex";
+      this.answerText.innerHTML = "Of course";
+      this.answerBtn.style.display = "flex";
+    }
+    this.answerBtn.addEventListener("click", () => {
+      this.talk();
+    });
+  }
 
-      answerBtn.addEventListener("click", () => {
-        console.log(this.speechIndex);
-        answerText.innerHTML = "Got it";
-        this.speechIndex++;
-        console.log(this.speechIndex);
-        console.log(this.outputContent[this.speechIndex]);
-        document.querySelector("#output p:last-child").innerHTML =
-          this.outputContent[this.speechIndex];
-        if (this.speechIndex == this.outputContent.length - 1) {
-          answerBtn.style.display = "none";
-        }
-      });
+  talk() {
+    this.answerText.innerHTML = "Got it";
+    this.speechIndex++;
+
+    document.querySelector("#output p:last-child").innerHTML =
+      this.outputContent[this.speechIndex];
+    if (this.speechIndex == this.outputContent.length - 1) {
+      this.answerBtn.style.display = "none";
     }
   }
 

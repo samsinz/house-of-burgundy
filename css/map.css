@@ -148,10 +148,9 @@
   background-repeat: no-repeat;
   position: absolute;
   left: 3vw;
-  top: 17vw;
-  width: 4.5vw;
-  height: 3.5vw;
-  filter: drop-shadow(0 0 0.4rem rgb(147, 8, 140));
+  top: 15.95vw;
+  width: 5vw;
+  height: 5vw;
 }
 
 #cat {

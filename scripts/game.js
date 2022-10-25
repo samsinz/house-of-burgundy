@@ -11,7 +11,7 @@ export default class Game {
       ["Have you found my friend Nima yet? I last saw him at Emily’s place."],
       "no-item",
       "Sam",
-      "Sam"
+      "sam"
     );
     this.castle = new Location(
       "castle",
@@ -29,11 +29,23 @@ export default class Game {
       ],
       "no-item",
       "Mayor",
-      "Mayor",
+      "mayor",
+      true
+    );
+    this.island = new Location(
+      "island",
+      [
+        "I am Volcano Island. I may be hidden but I am the heart of this place. The village is in danger.",
+        "My core needs to be replaced every thousand years. You need to come back here with a new core and a magical scroll.",
+        "The village will be slowly destroyed if you don’t. Help me and I’ll give you what you need to get to Nima.",
+      ],
+      "no-item",
+      "Volcano Island",
+      "volcano-island",
       true
     );
 
-    this.cat = new Location("cat", ["Purr."], "currant", "Cat");
+    this.cat = new Location("cat", ["Purr."], "redcurrants", "Cat");
 
     this.init();
   }
@@ -59,6 +71,10 @@ export default class Game {
 
     document.querySelector("#cat").addEventListener("click", () => {
       this.cat.goToLocation(this.currentInventory);
+    });
+
+    document.querySelector("#island").addEventListener("click", () => {
+      this.island.goToLocation(this.currentInventory);
     });
   }
 

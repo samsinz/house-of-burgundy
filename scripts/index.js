@@ -18,7 +18,7 @@ const rightPanel = document.querySelector("#right-panel");
 
 const outputTitle = document.querySelector("#output p:first-child");
 const outputContent = document.querySelector("#output p:last-child");
-const answerBtn = document.querySelector("#answer");
+let answerBtn = document.querySelector("#answer");
 const answerText = document.querySelector("#answer span");
 const backToMap = document.querySelector("#back-to-map");
 const character = document.querySelector("#character");
@@ -58,11 +58,12 @@ function launchGame() {
   rightPanel.style.visibility = "visible";
   character.style.display = "block";
   outputTitle.innerHTML = "SAM:";
+  document.querySelector("#status").classList.add("add-alert");
   const samSpeech = [
     "Hi! Welcome to my house. I need your help. My friend Nima has gone missing. Can you help me?",
     "I last saw him at Emily’s party. Apparently he went looking for berries.",
     "Go look for him in the village. You will surely find people willing to help you.",
-    "Beware, the sun sets in 5 minutes and wild boars roam the area.",
+    "Beware, the sun sets in 10 minutes and wild boars roam the area.",
     "Click on items to add them to your inventory. You can use them later when needed by clicking on them again.",
     "Good luck on your quest. If you need help, click on the information button above.",
     "Click on the map on the bottom right corner to visit the village. The timer will start then.",
@@ -74,7 +75,7 @@ function launchGame() {
     samSpeechIndex++;
     outputContent.innerHTML = samSpeech[samSpeechIndex];
     if (samSpeechIndex == samSpeech.length - 1) {
-      this.removeEventListener("click", handler);
+      this.removeEventListener("click", handler); //comment out
       this.style.display = "none";
       backToMap.style.display = "block";
     }
@@ -82,6 +83,9 @@ function launchGame() {
 }
 
 function goToMap() {
+  answerBtn.replaceWith(answerBtn.cloneNode(true));
+  answerBtn = document.querySelector("#answer");
+  answerBtn.style.display = "none";
   document.getElementById("back-to-map").style.display = "none";
   document
     .querySelectorAll(".item")
