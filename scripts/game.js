@@ -167,7 +167,7 @@ export default class Game {
     );
 
     this.cat = new Location("cat", ["Purr."], "redcurrants", "Cat");
-    this.goat = new Location("goat", ["Bleet bleet."], "no-item", "Goat:");
+    this.goat = new Location("goat", ["Bleet bleet."], "no-item", "Goat");
     this.sparrow = new Location(
       "sparrow",
       ["Chirp chirp."],
