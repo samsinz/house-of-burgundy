@@ -120,7 +120,7 @@
 }
 
 #farm {
-  background: url(./../assets/images/town-hall.png);
+  background: url(./../assets/images/farm.png);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -131,7 +131,7 @@
 }
 
 #vegetable-garden {
-  background: url(./../assets/images/town-hall.png);
+  background: url(./../assets/images/vegetable-garden.png);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -162,4 +162,64 @@
   top: 19.6vw;
   width: 2vw;
   height: 2vw;
+}
+
+#goat {
+  background: url(./../assets/images/goat.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 11.7vw;
+  top: 18.7vw;
+  width: 2vw;
+  height: 2vw;
+}
+
+#sparrow {
+  background: url(./../assets/images/sparrow.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 22vw;
+  top: 2vw;
+  width: 2vw;
+  height: 2vw;
+}
+
+#twins {
+  background: url(./../assets/images/twins.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 20.5vw;
+  top: 22.5vw;
+  width: 4.5vw;
+  height: 3.5vw;
+}
+
+#cellar {
+  background: url(./../assets/images/cellar.png);
+  z-index: 1;
+  display: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 9.8vw;
+  top: 1vw;
+  width: 34.2vw;
+  height: 25vw;
+  cursor: pointer;
+}
+
+#church-wall {
+  z-index: 1;
+  display: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 43vw;
+  top: 13vw;
+  width: 20vw;
+  height: 15vw;
+  cursor: pointer;
 }

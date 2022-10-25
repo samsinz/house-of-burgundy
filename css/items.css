@@ -26,10 +26,67 @@
   cursor: pointer;
 }
 
+#gold {
+  z-index: 1;
+  display: none;
+  background: url(./../assets/images/gold.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 48vw;
+  top: 26vw;
+  width: 3vw;
+  height: 4vw;
+  cursor: pointer;
+}
+
+#blackberries {
+  z-index: 1;
+  display: none;
+  background: url(./../assets/images/blackberries-group.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 45.5vw;
+  top: 27.1vw;
+  width: 8vw;
+  height: 8vw;
+  cursor: pointer;
+}
+
 #redcurrants {
   z-index: 1;
   display: none;
   background: url(./../assets/images/redcurrants.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  transform: rotate(-10deg);
+  left: 24vw;
+  top: 20vw;
+  width: 5vw;
+  height: 5vw;
+  cursor: pointer;
+}
+
+#gold {
+  z-index: 1;
+  display: none;
+  background: url(./../assets/images/gold.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 48vw;
+  top: 26vw;
+  width: 3vw;
+  height: 4vw;
+  cursor: pointer;
+}
+
+#pumpkin {
+  z-index: 1;
+  display: none;
+  background: url(./../assets/images/pumpkin.png);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;

@@ -7,6 +7,7 @@ export default class Location {
     characterName,
     conversation
   ) {
+    this.locationName = locationName;
     this.backgroundUrl = `./assets/images/${locationName}.jpg`;
     this.outputContent = outputContent;
     this.itemName = itemName;
@@ -70,6 +71,21 @@ export default class Location {
     this.answerBtn.addEventListener("click", () => {
       this.talk();
     });
+
+    console.log(this.locationName);
+    if (this.locationName == "castle") {
+      document.querySelector("#cellar").style.display = "block";
+    } else if (this.locationName == "church") {
+      console.log("at church");
+      document.querySelector("#church-wall").style.display = "block";
+    } else {
+      document.querySelector("#cellar").style.display = "none";
+      document.querySelector("#church-wall").style.display = "none";
+    }
+
+    if (this.locationName == "cellar") {
+      document.querySelector("#gold").style.display = "none";
+    }
   }
 
   talk() {
