@@ -5,6 +5,7 @@
 @import url(./map.css);
 @import url(./add-item.css);
 @import url(./items.css);
+@import url(./form.css);
 
 * {
   margin: 0;

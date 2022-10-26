@@ -1,7 +1,13 @@
 import Game from "./game.js";
+import Inventory from "./inventory.js";
+import Location from "./location.js";
 
 // user sees starter screen before anything else
 loadStarterScreen();
+
+document
+  .querySelector("#magical-formula")
+  .addEventListener("input", handleEndOfGame);
 
 // declare an audio background, which starts playing after starter screen
 let audio = new Audio("./assets/sound/adventure.mp3");
@@ -28,6 +34,34 @@ const musicBtn = document.querySelector("#music-btn");
 // enable button clicks
 musicBtn.addEventListener("click", switchMusic);
 backToMap.addEventListener("click", goToMap);
+
+function handleEndOfGame(event) {
+  if (event.target.value.toLowerCase() == "unga unga") {
+    document.querySelector("#unga-unga-form").style.display = "none";
+    const finalLocation = new Location(
+      "island-power",
+      ["You found me!"],
+      "no-item",
+      "Nima",
+      "nima"
+    );
+
+    let locationOnMap = document.querySelector("#island");
+    locationOnMap.replaceWith(locationOnMap.cloneNode(true));
+    locationOnMap = document.querySelector("#island");
+
+    let answerBtn = document.querySelector("#answer");
+    answerBtn.replaceWith(answerBtn.cloneNode(true));
+    answerBtn = document.querySelector("#answer");
+
+    locationOnMap.addEventListener("click", () => {
+      finalLocation.goToLocation(locationOnMap);
+    });
+
+    const finalInventory = new Inventory();
+    finalLocation.goToLocation(finalInventory);
+  }
+}
 
 // starter screen function, user is brought to intro after clicking play button
 function loadStarterScreen() {

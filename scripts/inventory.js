@@ -161,7 +161,7 @@ export default class Inventory {
       core: {
         neededIn: "island",
         locationUpdate: new Location(
-          "island",
+          "island-power",
           [
             "SPLOOSH. I have absorbed the new core and the village is saved. Thank you.",
             "I am ready to give Nima back to you. One last thing, what is the village's magic formula?",

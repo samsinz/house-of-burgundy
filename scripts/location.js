@@ -28,6 +28,7 @@ export default class Location {
   }
 
   goToLocation(currentInventory, giftedItem) {
+    console.log(currentInventory.inventory);
     this.giftedItem = giftedItem;
     this.currentInventory = currentInventory;
     this.answerBtn = document.querySelector("#answer");
@@ -74,6 +75,9 @@ export default class Location {
     }
     this.answerBtn.addEventListener("click", () => {
       this.talk();
+      if (this.currentInventory.inventory["core"] === "used") {
+        this.getMagicalFormula();
+      }
     });
 
     if (this.locationName == "church") {
@@ -86,6 +90,9 @@ export default class Location {
       this.showIsland();
     }
 
+    // if (this.currentInventory.inventory["core"] === "used") {
+    //   this.getMagicalFormula();
+    // } HERE
     // this.answerBtn.replaceWith(this.answerBtn.cloneNode(true));
     // this.answerBtn = document.querySelector("#answer");
 
@@ -127,5 +134,9 @@ export default class Location {
     document.querySelector("#main-panel").style.background =
       "center / contain no-repeat url(./../assets/images/map-island.jpg)";
     document.querySelector("#island").style.display = "block";
+  }
+
+  getMagicalFormula() {
+    document.querySelector("#unga-unga-form").style.display = "block";
   }
 }

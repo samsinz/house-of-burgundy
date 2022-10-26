@@ -1,0 +1,17 @@
+#unga-unga-form input {
+  width: 77%;
+  box-sizing: border-box;
+  position: absolute;
+  left: 2vw;
+  bottom: 1.2vw;
+  font-size: 2vw;
+  font-family: Slackey;
+  background-color: transparent;
+  border: 0;
+  padding-left: 0.8vw;
+  color: white;
+}
+
+#unga-unga-form input:focus {
+  outline-color: rgb(170, 101, 17);
+}
