@@ -14,6 +14,8 @@ export default class Location {
     this.outputTitle = outputTitle;
     this.answerBtn = document.querySelector("#answer");
     this.answerText = document.querySelector("#answer span");
+    this.giftedItem = null;
+    this.currentInventory = null;
 
     if (arguments.length >= 5) {
       this.characterName = characterName;
@@ -25,7 +27,9 @@ export default class Location {
     this.speechIndex = 0;
   }
 
-  goToLocation(currentInventory) {
+  goToLocation(currentInventory, giftedItem) {
+    this.giftedItem = giftedItem;
+    this.currentInventory = currentInventory;
     this.answerBtn = document.querySelector("#answer");
     this.answerText = document.querySelector("#answer span");
 
@@ -72,20 +76,22 @@ export default class Location {
       this.talk();
     });
 
-    console.log(this.locationName);
-    if (this.locationName == "castle") {
-      document.querySelector("#cellar").style.display = "block";
-    } else if (this.locationName == "church") {
-      console.log("at church");
+    if (this.locationName == "church") {
       document.querySelector("#church-wall").style.display = "block";
     } else {
-      document.querySelector("#cellar").style.display = "none";
       document.querySelector("#church-wall").style.display = "none";
     }
 
-    if (this.locationName == "cellar") {
-      document.querySelector("#gold").style.display = "none";
+    if (this.currentInventory.inventory["pumpkin"] === "used") {
+      this.showIsland();
     }
+
+    // this.answerBtn.replaceWith(this.answerBtn.cloneNode(true));
+    // this.answerBtn = document.querySelector("#answer");
+
+    // if (this.locationName == "cellar") {
+    //   document.querySelector("#gold").style.display = "none";
+    // }
   }
 
   talk() {
@@ -94,14 +100,32 @@ export default class Location {
 
     document.querySelector("#output p:last-child").innerHTML =
       this.outputContent[this.speechIndex];
+    console.log(this.speechIndex, " out of ", this.outputContent.length - 1);
     if (this.speechIndex == this.outputContent.length - 1) {
+      // this.answerBtn.replaceWith(this.answerBtn.cloneNode(true));
+      // this.answerBtn = document.querySelector("#answer");
       this.answerBtn.style.display = "none";
+      if (this.giftedItem) {
+        this.addGiftedItem(this.currentInventory, this.giftedItem);
+      }
     }
   }
 
   addItem(currentInventory) {
     document.querySelector(`#${this.itemName}`).style.display = "none";
-    currentInventory.inventory[this.itemName] = true;
+    currentInventory.inventory[this.itemName] = "collected";
     currentInventory.addInventory(`${this.itemName}`);
+  }
+
+  addGiftedItem(currentInventory, giftedItem) {
+    document.querySelector(`#${giftedItem}`).style.display = "none";
+    currentInventory.inventory[giftedItem] = "collected";
+    currentInventory.addInventory(`${giftedItem}`);
+  }
+
+  showIsland() {
+    document.querySelector("#main-panel").style.background =
+      "center / contain no-repeat url(./../assets/images/map-island.jpg)";
+    document.querySelector("#island").style.display = "block";
   }
 }

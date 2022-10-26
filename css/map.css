@@ -197,20 +197,6 @@
   height: 3.5vw;
 }
 
-#cellar {
-  background: url(./../assets/images/cellar.png);
-  z-index: 1;
-  display: none;
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 9.8vw;
-  top: 1vw;
-  width: 34.2vw;
-  height: 25vw;
-  cursor: pointer;
-}
-
 #church-wall {
   z-index: 1;
   display: none;

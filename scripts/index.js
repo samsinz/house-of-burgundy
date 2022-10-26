@@ -49,6 +49,7 @@ function loadStarterScreen() {
 
 // launching game (not starting game), this is the intro, where sam explains the rules
 function launchGame() {
+  document.querySelector("#main-panel").style.overflow = "hidden";
   audio.play();
   this.style.display = "none";
   currentScreen.style.transform = "scale(1)";
@@ -62,8 +63,9 @@ function launchGame() {
   const samSpeech = [
     "Hi! Welcome to my house. I need your help. My friend Nima has gone missing. Can you help me?",
     "I last saw him at Emily’s party. Apparently he went looking for berries.",
+    "I wish I could go look for him myself but I have a bootcamp project to finish.",
     "Go look for him in the village. You will surely find people willing to help you.",
-    "Beware, the sun sets in 10 minutes and wild boars roam the area.",
+    "Beware, the sun sets in 15 minutes and wild boars roam the area. You don't wanna get eaten.",
     "Click on items to add them to your inventory. You can use them later when needed by clicking on them again.",
     "Good luck on your quest. If you need help, click on the information button above.",
     "Click on the map on the bottom right corner to visit the village. The timer will start then.",
@@ -113,46 +115,3 @@ function switchMusic() {
     audioPlaying = true;
   }
 }
-
-// document.getElementById("castle").addEventListener("click", goToCastle);
-// document.getElementById("wine").addEventListener("click", addWine);
-
-// function goToCastle() {
-//   document.getElementById("back-to-map").style.display = "block";
-//   if (!inventory.wine) {
-//     document.getElementById("wine").style.display = "block";
-//   }
-//   const panelView = document.getElementById("location");
-//   panelView.style.background =
-//     "center / contain no-repeat url(./../assets/images/cellar.jpg) ";
-//   panelView.style.display = "block";
-// }
-
-// function addWine() {
-//   document.getElementById("wine").style.display = "none";
-//   inventory.wine = true;
-//   addInventory("Wine");
-// }
-
-// function updateInventory() {
-//   document.getElementById("add-inventory").style.display = "none";
-//   const inventoryItems = document.querySelectorAll(".inventory-item");
-//   let inventoryItemsCounter = 0;
-//   for (const item in inventory) {
-//     if (inventory[item] === true) {
-//       inventoryItems[
-//         inventoryItemsCounter
-//       ].style.background = `center / 80% no-repeat url(./../assets/images/${item}.png)`;
-//       inventoryItemsCounter++;
-//     }
-//   }
-// }
-
-// function addInventory(itemName) {
-//   document.getElementById("add-inventory").style.display = "block";
-//   document.getElementById("item-title").innerHTML = itemName;
-//   document.getElementById(
-//     "new-item"
-//   ).style.background = `center / contain no-repeat url(./../assets/images/${itemName}.png)`;
-//   document.getElementById("add-btn").addEventListener("click", updateInventory);
-// }
