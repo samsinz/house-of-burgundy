@@ -11,11 +11,13 @@ document
 
 // declare an audio background, which starts playing after starter screen
 let audio = new Audio("./assets/sound/adventure.mp3");
+let raveAudio = new Audio("./assets/sound/aperoAudio.mp3");
 let mapSound = new Audio("./assets/sound/mapSound.ogg");
 let basicClickSound = new Audio("./assets/sound/basicClick.ogg");
 
 let audioPlaying = true;
 audio.loop = true;
+raveAudio.loop = true;
 
 // boolean value to keep track of whether user finished introduction, timer starts when this is true
 let newGame = null;
@@ -160,6 +162,7 @@ function switchMusic() {
 
 function restartGame() {
   basicClickSound.play();
+  raveAudio.pause();
 
   document.querySelector("#apero").style.display = "none";
   if (newGame !== null) {
@@ -214,5 +217,15 @@ function handleEndOfGame(event) {
     locationOnMap.addEventListener("click", () => {
       finalLocation.goToLocation(finalInventory);
     });
+
+    const timerInterval = setInterval(() => {
+      const aperoDisplay = document.querySelector("#apero");
+      if (aperoDisplay.style.display === "block") {
+        audio.pause();
+        audioPlaying = false;
+        clearInterval(timerInterval);
+        raveAudio.play();
+      }
+    }, 500);
   }
 }
