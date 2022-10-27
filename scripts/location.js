@@ -143,7 +143,7 @@ export default class Location {
 
   showIsland() {
     document.querySelector("#main-panel").style.background =
-      "center / contain no-repeat url(./../assets/images/map-island.jpg)";
+      "center / contain no-repeat url(./assets/images/map-island.jpg)";
     document.querySelector("#island").style.display = "block";
   }
 

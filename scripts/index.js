@@ -152,6 +152,7 @@ function switchMusic() {
 }
 
 function restartGame() {
+  document.querySelector("#apero").style.display = "none";
   if (newGame !== null) {
     newGame.timer.stopTimer();
     newGame = null;
