@@ -36,6 +36,42 @@
   z-index: 1;
 }
 
+#apero {
+  background: center / contain no-repeat url(./../assets/images/apero.jpg);
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  animation: rave 2s ease-in-out infinite;
+}
+
+#apero-crowd {
+  background: center / contain no-repeat url(./../assets/images/apero-crowd.png);
+  width: 100%;
+  height: 100%;
+  animation: rave 1s ease-in-out infinite;
+  position: absolute;
+}
+
+#you-win p:first-child {
+  font-family: Slackey;
+  font-size: 4vw;
+  margin-top: 4vw;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 0.5vw black;
+  animation: rave 1s ease-in-out infinite;
+}
+
+#you-win p:last-child {
+  font-family: Slackey;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 0.5vw black;
+  animation: rave 1s ease-in-out infinite;
+}
+
 @keyframes float {
   0% {
     transform: translatey(0px);
@@ -45,6 +81,18 @@
   }
   100% {
     transform: translatey(0px);
+  }
+}
+
+@keyframes rave {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 

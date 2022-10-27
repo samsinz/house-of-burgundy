@@ -57,9 +57,9 @@ export default class Location {
 
     document.querySelector(
       "#output p:first-child"
-    ).innerHTML = `${this.outputTitle}:`;
+    ).textContent = `${this.outputTitle}:`;
 
-    document.querySelector("#output p:last-child").innerHTML =
+    document.querySelector("#output p:last-child").textContent =
       this.outputContent[this.speechIndex];
 
     const panelView = document.querySelector("#location");
@@ -74,7 +74,7 @@ export default class Location {
       this.conversation == true &&
       this.speechIndex !== this.outputContent.length - 1
     ) {
-      this.answerText.innerHTML = "Of course";
+      this.answerText.textContent = "Of course";
       this.answerBtn.style.display = "flex";
     }
     this.answerBtn.addEventListener("click", () => {
@@ -106,10 +106,10 @@ export default class Location {
   }
 
   talk() {
-    this.answerText.innerHTML = "Got it";
+    this.answerText.textContent = "Got it";
     this.speechIndex++;
 
-    document.querySelector("#output p:last-child").innerHTML =
+    document.querySelector("#output p:last-child").textContent =
       this.outputContent[this.speechIndex];
     console.log(this.speechIndex, " out of ", this.outputContent.length - 1);
     if (this.speechIndex == this.outputContent.length - 1) {
@@ -118,6 +118,13 @@ export default class Location {
       this.answerBtn.style.display = "none";
       if (this.giftedItem) {
         this.addGiftedItem(this.currentInventory, this.giftedItem);
+      }
+      if (this.outputTitle === "Nima") {
+        document.querySelector(
+          "#output p:first-child"
+        ).textContent = `MISSION:`;
+        document.querySelector("#output p:last-child").textContent = "Apéro.";
+        document.querySelector("#apero").style.display = "block";
       }
     }
   }

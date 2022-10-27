@@ -25,50 +25,20 @@ const rightPanel = document.querySelector("#right-panel");
 const outputTitle = document.querySelector("#output p:first-child");
 const outputContent = document.querySelector("#output p:last-child");
 let answerBtn = document.querySelector("#answer");
-const answerText = document.querySelector("#answer span");
+let answerText = document.querySelector("#answer span");
 const backToMap = document.querySelector("#back-to-map");
-const character = document.querySelector("#character");
+let character = document.querySelector("#character");
 
 const musicBtn = document.querySelector("#music-btn");
+const restartBtn = document.querySelector("#restart-btn");
+const infoBtn = document.querySelector("#info-btn");
 
 // enable button clicks
 musicBtn.addEventListener("click", switchMusic);
+restartBtn.addEventListener("click", restartGame);
+infoBtn.addEventListener("click", showInfo);
+
 backToMap.addEventListener("click", goToMap);
-
-function handleEndOfGame(event) {
-  if (event.target.value.toLowerCase() == "unga unga") {
-    document.querySelector("#unga-unga-form").style.display = "none";
-    const finalLocation = new Location(
-      "island-power",
-      [
-        "Hey, I’m Nima! Thank you so much for saving me!",
-        "After Emily’s party, I told Jeannot I would help him find berries.",
-        "For some reason, I decided to go look for berries after Emily’s party? I’m as confused as you are.",
-        "I must’ve fallen asleep in the village. All I remember is waking up trapped on this island. ",
-        "Let’s go back to Sam’s, it’s almost time for l’Apéro.",
-      ],
-      "no-item",
-      "Nima",
-      "nima",
-      true
-    );
-
-    let locationOnMap = document.querySelector("#island");
-    locationOnMap.replaceWith(locationOnMap.cloneNode(true));
-    locationOnMap = document.querySelector("#island");
-
-    let answerBtn = document.querySelector("#answer");
-    answerBtn.replaceWith(answerBtn.cloneNode(true));
-    answerBtn = document.querySelector("#answer");
-
-    const finalInventory = new Inventory();
-    finalLocation.goToLocation(finalInventory);
-
-    locationOnMap.addEventListener("click", () => {
-      finalLocation.goToLocation(finalInventory);
-    });
-  }
-}
 
 // starter screen function, user is brought to intro after clicking play button
 function loadStarterScreen() {
@@ -90,33 +60,53 @@ function loadStarterScreen() {
 
 // launching game (not starting game), this is the intro, where sam explains the rules
 function launchGame() {
+  const inventoryItems = document.querySelectorAll(".inventory-item");
+  for (let i = 0; i < inventoryItems.length; i++) {
+    inventoryItems[i].style.removeProperty("background");
+  }
+  document.querySelector("#timer span").textContent = "15:00";
+  character.style.background =
+    "center / contain no-repeat url(./../assets/images/sam.png)";
+
+  currentScreen.style.display = "block";
+  answerBtn = document.querySelector("#answer");
+  answerBtn.replaceWith(answerBtn.cloneNode(true));
+  answerBtn = document.querySelector("#answer");
+
+  answerBtn.style.display = "flex";
+  answerText = document.querySelector("#answer span");
+  answerText.textContent = "Of course";
+
   document.querySelector("#main-panel").style.overflow = "hidden";
   audio.play();
-  this.style.display = "none";
+  if (this) {
+    this.style.display = "none";
+  }
   currentScreen.style.transform = "scale(1)";
   currentScreen.style.background =
     "center / contain no-repeat url(./assets/images/sam-house.jpg";
   leftPanel.style.visibility = "visible";
   rightPanel.style.visibility = "visible";
   character.style.display = "block";
-  outputTitle.innerHTML = "SAM:";
+  outputTitle.textContent = "SAM:";
   document.querySelector("#status").classList.add("add-alert");
   const samSpeech = [
     "Hi! Welcome to my house. I need your help. My friend Nima has gone missing. Can you help me?",
     "I last saw him at Emily’s party. Apparently he went looking for berries.",
     "I wish I could go look for him myself but I have a bootcamp project to finish.",
     "Go look for him in the village. You will surely find people willing to help you.",
-    "Beware, the sun sets in 15 minutes and wild boars roam the area. You don't wanna get eaten.",
+    "Beware, the sun sets in 15 minutes and wild animals roam the area. You don't wanna get eaten.",
     "Click on items to add them to your inventory. You can use them later when needed by clicking on them again.",
     "Good luck on your quest. If you need help, click on the information button above.",
     "Click on the map on the bottom right corner to visit the village. The timer will start then.",
   ];
   let samSpeechIndex = 0;
-  outputContent.innerHTML = samSpeech[samSpeechIndex];
+  outputContent.textContent = samSpeech[samSpeechIndex];
   answerBtn.addEventListener("click", function handler() {
-    answerText.innerHTML = "Got it";
+    console.log("clicked on answer");
+    answerText.textContent = "Got it";
     samSpeechIndex++;
-    outputContent.innerHTML = samSpeech[samSpeechIndex];
+    outputContent.textContent = samSpeech[samSpeechIndex];
     if (samSpeechIndex == samSpeech.length - 1) {
       this.removeEventListener("click", handler); //comment out
       this.style.display = "none";
@@ -135,10 +125,11 @@ function goToMap() {
     .forEach((item) => (item.style.display = "none"));
   document.querySelector("#location").style.display = "none";
   character.style.display = "none";
-  outputTitle.innerHTML = "MISSION:";
-  outputContent.innerHTML = "Find Nima. He was last seen at Emily's party.";
+  outputTitle.textContent = "MISSION:";
+  outputContent.textContent = "Find Nima. He was last seen at Emily's party.";
   if (newGame === null) {
     newGame = new Game();
+    // newGame.currentInventory.updateInventory();
   } else {
     newGame.currentInventory.updateInventory();
   }
@@ -155,5 +146,51 @@ function switchMusic() {
     this.style.background =
       "center / 80% no-repeat url(./assets/images/no-audio.png)";
     audioPlaying = true;
+  }
+}
+
+function restartGame() {
+  if (newGame !== null) {
+    newGame.timer.stopTimer();
+    newGame = null;
+  }
+  launchGame();
+}
+
+function showInfo() {}
+
+function handleEndOfGame(event) {
+  if (event.target.value.toLowerCase() == "unga unga") {
+    newGame.timer.stopTimer();
+    document.querySelector("#unga-unga-form").remove();
+    const finalLocation = new Location(
+      "island-power",
+      [
+        "Hey, I’m Nima! Thank you so much for saving me!",
+        "For some reason, I decided to go look for berries after Emily’s party? I’m as confused as you are.",
+        "I must’ve fallen asleep in the village. All I remember is waking up trapped on this island. ",
+        "Anyway, let’s go back to Sam’s, it’s almost time for l’Apéro.",
+        "",
+      ],
+      "no-item",
+      "Nima",
+      "nima",
+      true
+    );
+
+    let locationOnMap = document.querySelector("#island");
+    locationOnMap.replaceWith(locationOnMap.cloneNode(true));
+    locationOnMap = document.querySelector("#island");
+
+    let answerBtn = document.querySelector("#answer");
+    answerBtn.replaceWith(answerBtn.cloneNode(true));
+    answerBtn = document.querySelector("#answer");
+
+    const finalInventory = new Inventory();
+    finalLocation.goToLocation(finalInventory);
+
+    locationOnMap.addEventListener("click", () => {
+      finalLocation.goToLocation(finalInventory);
+    });
   }
 }

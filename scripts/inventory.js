@@ -234,11 +234,17 @@ export default class Inventory {
 
   addInventory(itemName) {
     this.addInventoryPanel.style.display = "block";
-    this.itemTitle.innerHTML = itemName;
+    this.itemTitle.textContent = this.toCapitalize(itemName);
     this.newItem.style.background = `center / contain no-repeat url(./assets/images/${itemName}.png)`;
     this.addBtn.addEventListener("click", () => {
       this.updateInventory();
     });
+  }
+
+  toCapitalize(itemName) {
+    return (
+      itemName.slice(0, 1).toUpperCase() + itemName.slice(1, itemName.length)
+    );
   }
 
   useItem(currentItem) {
