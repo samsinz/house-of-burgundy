@@ -66,6 +66,10 @@ export default class Location {
     panelView.style.background = `center / contain no-repeat url(${this.backgroundUrl})`;
     panelView.style.display = "block";
 
+    if (this.giftedItem) {
+      currentInventory.inventory[giftedItem] = "collected";
+    }
+
     if (
       this.conversation == true &&
       this.speechIndex !== this.outputContent.length - 1
@@ -125,7 +129,7 @@ export default class Location {
   }
 
   addGiftedItem(currentInventory, giftedItem) {
-    document.querySelector(`#${giftedItem}`).style.display = "none";
+    // document.querySelector(`#${giftedItem}`).style.display = "none"; // unnecessary ?
     currentInventory.inventory[giftedItem] = "collected";
     currentInventory.addInventory(`${giftedItem}`);
   }

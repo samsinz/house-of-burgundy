@@ -15,7 +15,7 @@ let audioPlaying = true;
 audio.loop = true;
 
 // boolean value to keep track of whether user finished introduction, timer starts when this is true
-let gameStarted = false;
+let newGame = null;
 
 // declare DOM elements
 const currentScreen = document.querySelector("#location");
@@ -137,9 +137,10 @@ function goToMap() {
   character.style.display = "none";
   outputTitle.innerHTML = "MISSION:";
   outputContent.innerHTML = "Find Nima. He was last seen at Emily's party.";
-  if (!gameStarted) {
-    const newGame = new Game();
-    gameStarted = true;
+  if (newGame === null) {
+    newGame = new Game();
+  } else {
+    newGame.currentInventory.updateInventory();
   }
 }
 
