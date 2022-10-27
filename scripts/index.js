@@ -40,10 +40,17 @@ function handleEndOfGame(event) {
     document.querySelector("#unga-unga-form").style.display = "none";
     const finalLocation = new Location(
       "island-power",
-      ["You found me!"],
+      [
+        "Hey, I’m Nima! Thank you so much for saving me!",
+        "After Emily’s party, I told Jeannot I would help him find berries.",
+        "For some reason, I decided to go look for berries after Emily’s party? I’m as confused as you are.",
+        "I must’ve fallen asleep in the village. All I remember is waking up trapped on this island. ",
+        "Let’s go back to Sam’s, it’s almost time for l’Apéro.",
+      ],
       "no-item",
       "Nima",
-      "nima"
+      "nima",
+      true
     );
 
     let locationOnMap = document.querySelector("#island");
@@ -54,12 +61,12 @@ function handleEndOfGame(event) {
     answerBtn.replaceWith(answerBtn.cloneNode(true));
     answerBtn = document.querySelector("#answer");
 
-    locationOnMap.addEventListener("click", () => {
-      finalLocation.goToLocation(locationOnMap);
-    });
-
     const finalInventory = new Inventory();
     finalLocation.goToLocation(finalInventory);
+
+    locationOnMap.addEventListener("click", () => {
+      finalLocation.goToLocation(finalInventory);
+    });
   }
 }
 
