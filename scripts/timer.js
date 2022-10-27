@@ -21,7 +21,7 @@ export default class Timer {
         ).textContent = `MISSION:`;
         document.querySelector("#output p:last-child").textContent = "Survive.";
         document.querySelector("#apero").style.background =
-          " center / contain no-repeat url(./../assets/images/lost.jpg)";
+          " center / contain no-repeat url(./assets/images/lost.jpg)";
 
         document.querySelector("#apero").style.display = "block";
       }

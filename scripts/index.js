@@ -68,7 +68,7 @@ function launchGame() {
   }
   document.querySelector("#timer span").textContent = "15:00";
   character.style.background =
-    "center / contain no-repeat url(./../assets/images/sam.png)";
+    "center / contain no-repeat url(./assets/images/sam.png)";
 
   currentScreen.style.display = "block";
   answerBtn = document.querySelector("#answer");
