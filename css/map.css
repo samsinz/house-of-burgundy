@@ -124,10 +124,10 @@
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  left: 13.2vw;
+  left: 12.5vw;
   top: 9.2vw;
-  width: 4.5vw;
-  height: 3.5vw;
+  width: 5.4vw;
+  height: 4vw;
 }
 
 #vegetable-garden {
@@ -135,9 +135,9 @@
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  left: 22vw;
-  top: 9.8vw;
-  width: 4.5vw;
+  left: 21vw;
+  top: 10.7vw;
+  width: 5vw;
   height: 3.5vw;
 }
 
@@ -192,8 +192,8 @@
   background-repeat: no-repeat;
   position: absolute;
   left: 20.5vw;
-  top: 22.5vw;
-  width: 4.5vw;
+  top: 23vw;
+  width: 5.7vw;
   height: 3.5vw;
 }
 

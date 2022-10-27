@@ -39,6 +39,8 @@ restartBtn.addEventListener("click", restartGame);
 infoBtn.addEventListener("click", showInfo);
 
 backToMap.addEventListener("click", goToMap);
+const infoPanel = document.querySelector("#info-panel");
+infoPanel.style.display = "none";
 
 // starter screen function, user is brought to intro after clicking play button
 function loadStarterScreen() {
@@ -157,7 +159,15 @@ function restartGame() {
   launchGame();
 }
 
-function showInfo() {}
+function showInfo() {
+  console.log(infoPanel);
+  console.log(infoPanel.style.display);
+  if (infoPanel.style.display === "none") {
+    infoPanel.style.display = "block";
+  } else {
+    infoPanel.style.display = "none";
+  }
+}
 
 function handleEndOfGame(event) {
   if (event.target.value.toLowerCase() == "unga unga") {
