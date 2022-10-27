@@ -19,7 +19,7 @@ For this project, I’ve decided to develop a scavenger-hunt type game where the
 ## Credits
 
 - Icons: [upklyak](https://www.freepik.com/author/upklyak)
-- Music: [Adventure](www.serpentsoundstudios.com) by Alexander Nakarada CC BY 4.0
+- Music: [Adventure](https://www.serpentsoundstudios.com) by Alexander Nakarada CC BY 4.0
 
 
 ## [Link to the game](https://samsinz.github.io/house-of-burgundy/)
