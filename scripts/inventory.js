@@ -7,6 +7,9 @@ export default class Inventory {
     this.itemTitle = document.querySelector("#item-title");
     this.newItem = document.querySelector("#new-item");
     this.addBtn = document.querySelector("#add-btn");
+    this.clickAdd = new Audio("./assets/sound/clickAdd.ogg");
+    this.useItemSound = new Audio("./assets/sound/useItem.ogg");
+
     this.itemUsageTime = {
       blackberries: {
         neededIn: "farm",
@@ -221,6 +224,7 @@ export default class Inventory {
         inventoryItems[inventoryItemsCounter].parentElement.addEventListener(
           "click",
           () => {
+            this.useItemSound.play();
             this.useItem(item);
           }
         );
@@ -237,6 +241,7 @@ export default class Inventory {
     this.itemTitle.textContent = this.toCapitalize(itemName);
     this.newItem.style.background = `center / contain no-repeat url(./assets/images/${itemName}.png)`;
     this.addBtn.addEventListener("click", () => {
+      this.clickAdd.play();
       this.updateInventory();
     });
   }

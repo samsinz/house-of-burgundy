@@ -4,6 +4,7 @@ import Location from "./location.js";
 
 export default class Game {
   constructor() {
+    this.goToLocationSound = new Audio("./assets/sound/goToLocationSound.ogg");
     this.timer = new Timer();
     this.currentInventory = new Inventory();
     this.samHouse = new Location(
@@ -193,80 +194,99 @@ export default class Game {
     //   this.addWine();
     // });
     document.querySelector("#sam-house").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.samHouse.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#church-wall").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.churchWall.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#emily-house").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.emilyHouse.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#twins").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.twins.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#church").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.church.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#lavoir").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.lavoir.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#castle").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.castle.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#town-hall").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.townHall.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#cat").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.cat.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#sparrow").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.sparrow.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#goat").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.goat.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#island").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.island.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#bus-stop").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.busStop.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#bins").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.bins.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#well").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.well.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#tree").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.tree.goToLocation(this.currentInventory);
     });
 
     document.querySelector("#antenna").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.antenna.goToLocation(this.currentInventory);
     });
 
     document
       .querySelector("#vegetable-garden")
       .addEventListener("click", () => {
+        this.goToLocationSound.play();
         this.vegetableGarden.goToLocation(this.currentInventory);
       });
 
     document.querySelector("#farm").addEventListener("click", () => {
+      this.goToLocationSound.play();
       this.farm.goToLocation(this.currentInventory);
     });
   }

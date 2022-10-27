@@ -17,6 +17,8 @@ export default class Location {
     this.giftedItem = null;
     this.currentInventory = null;
 
+    this.pickUpSound = new Audio("./assets/sound/pickUp.ogg");
+
     if (arguments.length >= 5) {
       this.characterName = characterName;
       this.locationCharacterUrl = `./assets/images/${this.characterName}.png`;
@@ -130,6 +132,7 @@ export default class Location {
   }
 
   addItem(currentInventory) {
+    this.pickUpSound.play();
     document.querySelector(`#${this.itemName}`).style.display = "none";
     currentInventory.inventory[this.itemName] = "collected";
     currentInventory.addInventory(`${this.itemName}`);

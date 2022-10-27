@@ -11,6 +11,9 @@ document
 
 // declare an audio background, which starts playing after starter screen
 let audio = new Audio("./assets/sound/adventure.mp3");
+let mapSound = new Audio("./assets/sound/mapSound.ogg");
+let basicClickSound = new Audio("./assets/sound/basicClick.ogg");
+
 let audioPlaying = true;
 audio.loop = true;
 
@@ -62,6 +65,7 @@ function loadStarterScreen() {
 
 // launching game (not starting game), this is the intro, where sam explains the rules
 function launchGame() {
+  mapSound.play();
   const inventoryItems = document.querySelectorAll(".inventory-item");
   for (let i = 0; i < inventoryItems.length; i++) {
     inventoryItems[i].style.removeProperty("background");
@@ -118,6 +122,7 @@ function launchGame() {
 }
 
 function goToMap() {
+  mapSound.play();
   answerBtn.replaceWith(answerBtn.cloneNode(true));
   answerBtn = document.querySelector("#answer");
   answerBtn.style.display = "none";
@@ -138,6 +143,8 @@ function goToMap() {
 }
 
 function switchMusic() {
+  basicClickSound.play();
+
   if (audioPlaying) {
     audio.pause();
     this.style.background =
@@ -152,6 +159,8 @@ function switchMusic() {
 }
 
 function restartGame() {
+  basicClickSound.play();
+
   document.querySelector("#apero").style.display = "none";
   if (newGame !== null) {
     newGame.timer.stopTimer();
@@ -161,6 +170,8 @@ function restartGame() {
 }
 
 function showInfo() {
+  basicClickSound.play();
+
   console.log(infoPanel);
   console.log(infoPanel.style.display);
   if (infoPanel.style.display === "none") {
