@@ -18,7 +18,7 @@ export default class Game {
       "castle",
       [
         "A great castle stood here a long time ago. It might be in ruins but it's still majestic.",
-        "According to legend, it was also used to mint coins illegally. You could try to go inside but the doors are locked..",
+        "According to legend, it was also used to mint coins illegally. You could try to go inside but you need A key..",
       ],
       "gold",
       "Castle Ruins",
@@ -92,7 +92,7 @@ export default class Game {
         "Hi, would you like to keep me company while I wait for the bus?",
         "I know this village better than anyone else. I can tell you all about its secrets.",
         "For example, according to legend, a witch lives in the tree up the hill.",
-        "Bring me some wine while I wait and I'll tell you more secrets.",
+        "Bring me some wine while I wait and I'll tell you more secrets. Château Grenouilles is my favorite.",
       ],
       "no-item",
       "Crazy Villager",
