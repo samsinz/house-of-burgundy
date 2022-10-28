@@ -79,11 +79,13 @@ export default class Location {
       this.answerText.textContent = "Of course";
       this.answerBtn.style.display = "flex";
     }
+
+    if (this.currentInventory.inventory["core"] === "used") {
+      this.getMagicalFormula();
+    }
+
     this.answerBtn.addEventListener("click", () => {
       this.talk();
-      if (this.currentInventory.inventory["core"] === "used") {
-        this.getMagicalFormula();
-      }
     });
 
     if (this.locationName == "church") {

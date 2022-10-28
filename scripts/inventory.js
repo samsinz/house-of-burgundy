@@ -275,13 +275,24 @@ export default class Inventory {
       locationOnMap.replaceWith(locationOnMap.cloneNode(true));
       locationOnMap = document.querySelector(`#${currentLocation}`);
 
-      const finalLocation = new Location(
-        currentLocation,
-        [this.itemUsageTime[currentItem].finalText],
-        "no-item",
-        this.itemUsageTime[currentItem].outputName,
-        this.itemUsageTime[currentItem].character
-      );
+      let finalLocation = null;
+      if (currentLocation === "island") {
+        finalLocation = new Location(
+          "island-power",
+          [this.itemUsageTime[currentItem].finalText],
+          "no-item",
+          this.itemUsageTime[currentItem].outputName,
+          this.itemUsageTime[currentItem].character
+        );
+      } else {
+        finalLocation = new Location(
+          currentLocation,
+          [this.itemUsageTime[currentItem].finalText],
+          "no-item",
+          this.itemUsageTime[currentItem].outputName,
+          this.itemUsageTime[currentItem].character
+        );
+      }
 
       locationOnMap.addEventListener("click", () => {
         finalLocation.goToLocation(this);
