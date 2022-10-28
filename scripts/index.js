@@ -161,6 +161,8 @@ function switchMusic() {
 }
 
 function restartGame() {
+  document.querySelector("#timer").style.animation = "";
+  document.querySelector("#timer span").style.color = "#ebd4b6";
   basicClickSound.play();
   raveAudio.pause();
 

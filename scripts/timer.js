@@ -22,7 +22,7 @@ export default class Timer {
         document.querySelector("#output p:last-child").textContent = "Survive.";
         document.querySelector("#apero").style.background =
           " center / contain no-repeat url(./assets/images/lost.jpg)";
-
+        document.querySelector("#answer").style.display = "none";
         document.querySelector("#apero").style.display = "block";
       }
     }, 1000);
