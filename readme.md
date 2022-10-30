@@ -1,9 +1,9 @@
 # House of Burgundy game made by Sam Sinz
 
-## Why I choose this game?
+## Why I chose this game?
 
-Having lived a few years in a village in Burgundy, I’ve always been amazed by the endless exploring opportunities of a seemingly boring place.
-For this project, I’ve decided to develop a scavenger-hunt type game where the user needs to find my friend in the village. By discovering the village and its mysteries, the user finds important items and is given side quests by interesting characters.
+Having lived a few years in a village in Burgundy, I have always been amazed by the endless exploring opportunities of a seemingly dull place.
+For this project, I have decided to develop a scavenger hunt-type game where the user helps Sam find his friend in the village. By discovering the area and its mysteries, the user picks up essential items and is given side quests by colorful characters.
 
 ## Key features
 
@@ -19,7 +19,6 @@ For this project, I’ve decided to develop a scavenger-hunt type game where the
 ## Credits
 
 - Icons: [upklyak](https://www.freepik.com/author/upklyak)
-- Music: [Adventure](https://www.serpentsoundstudios.com) by Alexander Nakarada CC BY 4.0
-
+- Music: [Adventure](https://www.serpentsoundstudios.com/royalty-free-music/celtic-fantasy) and [Sun](https://www.serpentsoundstudios.com/royalty-free-music/techno-electronic) by Alexander Nakarada CC BY 4.0
 
 ## [Link to the game](https://samsinz.github.io/house-of-burgundy/)
