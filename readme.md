@@ -1,4 +1,4 @@
-# House of Burgundy game made by Sam Sinz
+# House of Burgundy, game by Sam Sinz
 
 ## Why I chose this game?
 
