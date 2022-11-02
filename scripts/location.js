@@ -1,12 +1,5 @@
 export default class Location {
-  constructor(
-    locationName,
-    outputContent,
-    itemName,
-    outputTitle,
-    characterName,
-    conversation
-  ) {
+  constructor(locationName, outputContent, itemName, outputTitle, characterName, conversation) {
     this.locationName = locationName;
     this.backgroundUrl = `./assets/images/${locationName}.jpg`;
     this.outputContent = outputContent;
@@ -30,7 +23,6 @@ export default class Location {
   }
 
   goToLocation(currentInventory, giftedItem) {
-    console.log(currentInventory.inventory);
     this.giftedItem = giftedItem;
     this.currentInventory = currentInventory;
     this.answerBtn = document.querySelector("#answer");
@@ -45,11 +37,9 @@ export default class Location {
       document.querySelector(`#${this.itemName}`).style.display = "block";
     }
 
-    document
-      .querySelector(`#${this.itemName}`)
-      .addEventListener("click", () => {
-        this.addItem(currentInventory);
-      });
+    document.querySelector(`#${this.itemName}`).addEventListener("click", () => {
+      this.addItem(currentInventory);
+    });
 
     if (this.characterName) {
       const character = document.querySelector("#character");
@@ -57,12 +47,9 @@ export default class Location {
       character.style.display = "block";
     }
 
-    document.querySelector(
-      "#output p:first-child"
-    ).textContent = `${this.outputTitle}:`;
+    document.querySelector("#output p:first-child").textContent = `${this.outputTitle}:`;
 
-    document.querySelector("#output p:last-child").textContent =
-      this.outputContent[this.speechIndex];
+    document.querySelector("#output p:last-child").textContent = this.outputContent[this.speechIndex];
 
     const panelView = document.querySelector("#location");
     panelView.style.background = `center / contain no-repeat url(${this.backgroundUrl})`;
@@ -72,10 +59,7 @@ export default class Location {
       currentInventory.inventory[giftedItem] = "collected";
     }
 
-    if (
-      this.conversation == true &&
-      this.speechIndex !== this.outputContent.length - 1
-    ) {
+    if (this.conversation == true && this.speechIndex !== this.outputContent.length - 1) {
       this.answerText.textContent = "Of course";
       this.answerBtn.style.display = "flex";
     }
@@ -113,9 +97,7 @@ export default class Location {
     this.answerText.textContent = "Got it";
     this.speechIndex++;
 
-    document.querySelector("#output p:last-child").textContent =
-      this.outputContent[this.speechIndex];
-    console.log(this.speechIndex, " out of ", this.outputContent.length - 1);
+    document.querySelector("#output p:last-child").textContent = this.outputContent[this.speechIndex];
     if (this.speechIndex == this.outputContent.length - 1) {
       // this.answerBtn.replaceWith(this.answerBtn.cloneNode(true));
       // this.answerBtn = document.querySelector("#answer");
@@ -124,10 +106,11 @@ export default class Location {
         this.addGiftedItem(this.currentInventory, this.giftedItem);
       }
       if (this.outputTitle === "Nima") {
-        document.querySelector(
-          "#output p:first-child"
-        ).textContent = `MISSION:`;
+        document.querySelector("#output p:first-child").textContent = `MISSION:`;
         document.querySelector("#output p:last-child").textContent = "Apéro.";
+        document.querySelector("#apero").style.background = " center / contain no-repeat url(./assets/images/apero.jpg)";
+        document.querySelector("#you-win p:first-child").textContent = "YOU WIN";
+        document.querySelector("#you-win p:last-child").textContent = "Let's rave now.";
         document.querySelector("#apero").style.display = "block";
       }
     }
@@ -147,8 +130,7 @@ export default class Location {
   }
 
   showIsland() {
-    document.querySelector("#main-panel").style.background =
-      "center / contain no-repeat url(./assets/images/map-island.jpg)";
+    document.querySelector("#main-panel").style.background = "center / contain no-repeat url(./assets/images/map-island.jpg)";
     document.querySelector("#island").style.display = "block";
   }
 

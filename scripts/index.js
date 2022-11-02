@@ -5,9 +5,7 @@ import Location from "./location.js";
 // user sees starter screen before anything else
 loadStarterScreen();
 
-document
-  .querySelector("#magical-formula")
-  .addEventListener("input", handleEndOfGame);
+document.querySelector("#magical-formula").addEventListener("input", handleEndOfGame);
 
 // declare an audio background, which starts playing after starter screen
 let audio = new Audio("./assets/sound/adventure.mp3");
@@ -51,8 +49,7 @@ infoPanel.style.display = "none";
 function loadStarterScreen() {
   const playButton = document.createElement("div");
   playButton.setAttribute("id", "play-btn");
-  playButton.style.background =
-    "center / contain no-repeat url(./assets/images/play.jpg";
+  playButton.style.background = "center / contain no-repeat url(./assets/images/play.jpg";
   playButton.style.position = "absolute";
   playButton.style.zIndex = "1";
   playButton.style.cursor = "pointer";
@@ -73,8 +70,7 @@ function launchGame() {
     inventoryItems[i].style.removeProperty("background");
   }
   document.querySelector("#timer span").textContent = "15:00";
-  character.style.background =
-    "center / contain no-repeat url(./assets/images/sam.png)";
+  character.style.background = "center / contain no-repeat url(./assets/images/sam.png)";
 
   currentScreen.style.display = "block";
   answerBtn = document.querySelector("#answer");
@@ -91,8 +87,7 @@ function launchGame() {
     this.style.display = "none";
   }
   currentScreen.style.transform = "scale(1)";
-  currentScreen.style.background =
-    "center / contain no-repeat url(./assets/images/sam-house.jpg";
+  currentScreen.style.background = "center / contain no-repeat url(./assets/images/sam-house.jpg";
   leftPanel.style.visibility = "visible";
   rightPanel.style.visibility = "visible";
   character.style.display = "block";
@@ -111,7 +106,6 @@ function launchGame() {
   let samSpeechIndex = 0;
   outputContent.textContent = samSpeech[samSpeechIndex];
   answerBtn.addEventListener("click", function handler() {
-    console.log("clicked on answer");
     answerText.textContent = "Got it";
     samSpeechIndex++;
     outputContent.textContent = samSpeech[samSpeechIndex];
@@ -129,9 +123,7 @@ function goToMap() {
   answerBtn = document.querySelector("#answer");
   answerBtn.style.display = "none";
   document.getElementById("back-to-map").style.display = "none";
-  document
-    .querySelectorAll(".item")
-    .forEach((item) => (item.style.display = "none"));
+  document.querySelectorAll(".item").forEach((item) => (item.style.display = "none"));
   document.querySelector("#location").style.display = "none";
   character.style.display = "none";
   outputTitle.textContent = "MISSION:";
@@ -149,13 +141,11 @@ function switchMusic() {
 
   if (audioPlaying) {
     audio.pause();
-    this.style.background =
-      "center / 80% no-repeat url(./assets/images/audio.png)";
+    this.style.background = "center / 80% no-repeat url(./assets/images/audio.png)";
     audioPlaying = false;
   } else {
     audio.play();
-    this.style.background =
-      "center / 80% no-repeat url(./assets/images/no-audio.png)";
+    this.style.background = "center / 80% no-repeat url(./assets/images/no-audio.png)";
     audioPlaying = true;
   }
 }
@@ -176,9 +166,6 @@ function restartGame() {
 
 function showInfo() {
   basicClickSound.play();
-
-  console.log(infoPanel);
-  console.log(infoPanel.style.display);
   if (infoPanel.style.display === "none") {
     infoPanel.style.display = "block";
   } else {
