@@ -80,6 +80,18 @@ body {
   background-color: black;
   height: 18%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+
+}
+
+#top-bar img {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 1rem;
+  cursor: pointer;
 }
 
 #game-container {
@@ -94,3 +106,4 @@ body {
   height: 18%;
   width: 100%;
 }
+

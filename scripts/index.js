@@ -5,6 +5,14 @@ import Location from "./location.js";
 // user sees starter screen before anything else
 loadStarterScreen();
 
+document.querySelector("#linkedin-link").addEventListener("click", () => {
+  window.location = "https://www.linkedin.com/in/sam-sinz/";
+});
+
+document.querySelector("#github-link").addEventListener("click", () => {
+  window.location = "https://github.com/samsinz/house-of-burgundy";
+});
+
 document.querySelector("#magical-formula").addEventListener("input", handleEndOfGame);
 
 // declare an audio background, which starts playing after starter screen
@@ -65,6 +73,7 @@ function loadStarterScreen() {
 // launching game (not starting game), this is the intro, where sam explains the rules
 function launchGame() {
   mapSound.play();
+  document.querySelector("#top-bar").style.visibility = "visible";
   const inventoryItems = document.querySelectorAll(".inventory-item");
   for (let i = 0; i < inventoryItems.length; i++) {
     inventoryItems[i].style.removeProperty("background");
